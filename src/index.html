@@ -3,38 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../src/styles.css">
 	<title>Encryptor</title>
 </head>
 <body>
 
-	<header>
-		<img src="https://i.imgur.com/gFQAEYq.png" alt="Logo Alura" class="logo">
-	</header>
-
 	<main>
-		<div class="containerInput">
-			<textarea class="containerInput__input" name="input_message" id="input_message" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
-		</div>
-
-		<div>
-			<div class="containerAlert">
-				<img class="containerAlert__img" src="../public/Alert.svg" alt="Simbolo de alerta">
-				<p class="containerAlert__text">Solo letras minúsculas y sin acentos</p>
+		<div class="containerMain">
+			<div class="containerPrincipal">
+				<img src="https://i.imgur.com/gFQAEYq.png" alt="Logo Alura" class="logo">
+	
+				<div class="containerInput">
+					<textarea class="containerInput__input" name="input_message" id="input_message" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+				</div>
+		
+				<div>
+					<div class="containerAlert">
+						<img class="containerAlert__img" src="../public/Alert.svg" alt="Simbolo de alerta">
+						<p class="containerAlert__text">Solo letras minúsculas y sin acentos</p>
+					</div>
+		
+					<div class="containerButtons">
+						<button class="containerButtons__encryptBtn btn" id="btn_encrypt">Encriptar</button>
+						<button class="containerButtons__decryptBtn btn" id="btn_decrypt">Desencriptar</button>
+					</div>
+				</div>
+	
 			</div>
-
-			<div class="containerButtons">
-				<button class="containerButtons__encryptBtn" id="btn_encrypt">Encriptar</button>
-				<button class="containerButtons__decryptBtn" id="btn_decrypt">Desencriptar</button>
+	
+			<div class="containerOutput">
+				<div class="containerOutput__container" id="no_output_message">
+					<img class="containerOutput__img" src="https://i.imgur.com/OEjvLe0.png" alt="Imagen de espera de texto">
+					<h3 class="containerOutput__title">Ningún mensaje fue encontrado</h3>
+					<p class="containerOutput__text">Ingresa el texto que desees encriptar o desencriptar.</p>
+				</div>
+				<p class="containerOutput__outputText hidden" id="output_message"></p>
 			</div>
-		</div>
-
-		<div class="containerOutput">
-			<div class="containerOutput__container" id="no_output_message">
-				<img class="containerOutput__img" src="https://i.imgur.com/OEjvLe0.png" alt="Imagen de espera de texto">
-				<h3 class="containerOutput__title">Ningún mensaje fue encontrado</h3>
-				<p class="containerOutput__text">Ingresa el texto que desees encriptar o desencriptar.</p>
-			</div>
-			<p class="containerOutput__outputText hidden" id="output_message"></p>
 		</div>
 	</main>
 
