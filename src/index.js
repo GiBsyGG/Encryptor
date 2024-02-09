@@ -1,9 +1,11 @@
 let btn_encrypt = document.getElementById('btn_encrypt');
 let btn_decrypt = document.getElementById('btn_decrypt');
+let btn_copy = document.getElementById('btn_copy');
 
 let input_message = document.getElementById('input_message');
 let no_output_message = document.getElementById('no_output_message');
 let output_message = document.getElementById('output_message');
+let output_anser_div = document.getElementById('answerContainer');
 
 let encrypt_keys = {
   "a": "ai",
@@ -43,7 +45,7 @@ function encrypt_message() {
 
   if(!no_output_message.classList.contains('hidden')) {
     no_output_message.classList.add('hidden');
-    output_message.classList.remove('hidden');
+    output_anser_div.classList.remove('hidden');
   }
   let input_message = document.getElementById('input_message').value;
 
@@ -58,7 +60,7 @@ function decrypt_message() {
   
     if(!no_output_message.classList.contains('hidden')) {
         no_output_message.classList.add('hidden');
-        output_message.classList.remove('hidden');
+        output_anser_div.classList.remove('hidden');
     }
 
     let input_message = document.getElementById('input_message').value;
@@ -70,6 +72,17 @@ function decrypt_message() {
     output_message.innerText = output;
 }
 
+  const copiarContenido = async () => {
+    try {
+
+      await navigator.clipboard.writeText(output_message.innerText);
+      console.log('Contenido copiado al portapapeles');
+    } catch (err) {
+      console.error('Error al copiar: ', err);
+    }
+  }
+
 
 btn_encrypt.addEventListener('click', encrypt_message);
 btn_decrypt.addEventListener('click', decrypt_message);
+btn_copy.addEventListener('click', copiarContenido);
