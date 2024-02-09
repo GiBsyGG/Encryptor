@@ -35,7 +35,7 @@ function encrypt(input) {
 function decrypt(input) {
   // Convertir el input usando las llaves de encrypt_keys pero de forma inversa
   for(let key in encrypt_keys) {
-    input = input.replace(encrypt_keys[key], key);
+    input = input.replaceAll(encrypt_keys[key], key);
   }
   return input;
 
@@ -76,7 +76,6 @@ function decrypt_message() {
     try {
 
       await navigator.clipboard.writeText(output_message.innerText);
-      console.log('Contenido copiado al portapapeles');
     } catch (err) {
       console.error('Error al copiar: ', err);
     }
