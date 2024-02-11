@@ -38,6 +38,7 @@
 html{
     font-size: 62.5%;
     font-family: "Inter", sans-serif;
+    width: 100%;
 }
 
 body{
@@ -79,6 +80,8 @@ body{
 
 .containerInput__input{
     border: none;
+    width: 100%;
+    height: 400px;
     font-family: "Inter", sans-serif;
     font-size: var(--font-size-1);
     font-weight: var(--font-weight-2);
@@ -232,6 +235,10 @@ body{
 
     .containerButtons__decryptBtn{
         width: 48%;
+    }
+
+    .containerInput__input{
+        height: 600px;
     }
 }
 
