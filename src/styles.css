@@ -90,6 +90,7 @@ body{
 }
 
 .containerInput__input::placeholder{
+    font-size: var(--font-size-2);
     color: var(--dark-blue-300);
 }
 
@@ -239,6 +240,11 @@ body{
 
     .containerInput__input{
         height: 600px;
+    }
+
+    .containerInput__input::placeholder{
+        font-size: var(--font-size-1);
+        color: var(--dark-blue-300);
     }
 }
 
